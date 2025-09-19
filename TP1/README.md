@@ -14,7 +14,7 @@
 
 **Resolução:** Para determinar a expressão regular, recorri aos conhecimentos adequiridos na UC _Autómatos e Linguagens Formais_. Comecei por construir o autómato que reconhecia o problema. E para tal obti o seguinte autómato:
 
-![Autómato](automato.svg)
+![Autómato](anexos/automato.svg)
 
 A partir do qual, depois de o interpretar, consegui construir a expressão regular da linguagem.
 
@@ -22,4 +22,4 @@ A partir do qual, depois de o interpretar, consegui construir a expressão regul
 $1^* 0 (0^* 1 0)^* 0^* (1+ε) + 1^*$
 
 **Resultado Experimental:**<br>
-Usando a ferramenta _regular expressions 101_, realizei alguns testes para a minha expressão, e a expressão regular que determinei<br>![TestesTPC1](testesTPC1.png)
+Usando a ferramenta _regular expressions 101_, realizei alguns testes para a minha expressão, e a expressão regular que determinei<br>![TestesTPC1](anexos/testesTPC1.png)

@@ -34,10 +34,8 @@ Estão presentes os TPC's das aulas teóricas tanto como os exercícios realizad
 PLC2025/
 ├── README.md
 ├── TP1/
-│   ├── src/
-│   ├── testes/
-│   ├── relatorio.pdf
-│   └── enunciado.pdf
+│   ├── anexos/
+│   └── README.md
 ├
 └── AulasTP/
     ├── 1ª Aula
