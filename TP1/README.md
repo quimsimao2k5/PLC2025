@@ -4,13 +4,7 @@
 
 **Problema:** Determinar uma expressão regular que aceite string binárias em que a substring "011" não seja fator na string
 
-# PLC2025 - Processamento de Linguagens e Compiladores
-
-## TPC1
-
-**Problema:** Determinar uma expressão regular que aceite string binárias em que a substring "011" não seja fator na string
-
-**Resposta:** $\wedge{}((1*0(0*10)*0*(1|\$))|1*)$
+**Resposta no formato das aulas:** ^((1\*0(0\*10)\*0\*(1|\$))|1\*)\$
 
 **Resolução:** Para determinar a expressão regular, recorri aos conhecimentos adequiridos na UC _Autómatos e Linguagens Formais_. Comecei por construir o autómato que reconhecia o problema. E para tal obti o seguinte autómato:
 
