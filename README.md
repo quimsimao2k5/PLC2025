@@ -5,7 +5,7 @@
 **Nome:** Joaquim Simão Freitas da Cunha
 **ID:** A108572  
 **Foto:**  
-![Foto do Autor](caminho/para/sua/foto.jpg)
+<img src="autor.jpg" alt="Foto do Autor" width="100">
 
 ---
 
