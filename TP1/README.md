@@ -8,6 +8,8 @@
 
 **Resolução:** Para determinar a expressão regular, recorri aos conhecimentos adequiridos na UC _Autómatos e Linguagens Formais_. Comecei por construir o autómato que reconhecia o problema. E para tal obti o seguinte autómato:
 
+O autómato começa no estado 1, esqueci-me de colocar a seta.
+
 ![Autómato](anexos/automato.svg)
 
 A partir do qual, depois de o interpretar, consegui construir a expressão regular da linguagem.
