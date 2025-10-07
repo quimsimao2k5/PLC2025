@@ -21,10 +21,15 @@ Estão presentes os TPC's das aulas teóricas tanto como os exercícios realizad
 
 ## Lista de Resultados
 
-### Trabalho Prático 1 (TP1)
+### Trabalho Casa 1 (TP1)
 
 - 📁 **Diretório:** [TP1/](./TP1/)
 - 📄 **Relatório:** [TP1/README.md](./TP1/README.md)
+
+### Trabalho Casa 2 (TP2)
+
+- 📁 **Diretório:** [TP2/](./TP2/)
+- 📄 **Relatório:** [TP2/README.md](./TP2/README.md)
 
 ---
 
