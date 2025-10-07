@@ -123,7 +123,7 @@ O ***Markdown*** revolucionou a forma como escrevemos *documentação técnica*.
 **Nota:** Este texto contém *exemplos* de **formatação** ***mista*** para testar todas as funcionalidades.
 ```
 
-Para a qual a função `transicao` deu o seguinte resultado:
+A função `transicao` deu o seguinte resultado:
 
 ```
 <h1>Processamento de Linguagens e Compiladores</h1>
