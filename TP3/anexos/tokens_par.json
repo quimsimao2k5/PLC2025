@@ -1,0 +1,70 @@
+[
+  {
+    "id": "SKIP",
+    "expreg": "[ \\t]|#.*"
+  },
+  {
+    "id": "INT",
+    "expreg": "\\d+"
+  },
+  {
+    "id": "KEYWORD",
+    "expreg": "SELECT|AS|WHERE|INSERT|DELETE|PREFIX|FILTER|OPTIONAL|ASK|CONSTRUCT|DESCRIBE|ORDER|BY|ASC|DESC|LIMIT|OFFSET|DISTINCT|REDUCED|UNION|GRAPH|BIND"
+  },
+  {
+    "id": "CA",
+    "expreg": "\\{"
+  },
+  {
+    "id": "CF",
+    "expreg": "\\}"
+  },
+  {
+    "id": "PA",
+    "expreg": "\\("
+  },
+  {
+    "id": "PF",
+    "expreg": "\\)"
+  },
+  {
+    "id": "PREFIX",
+    "expreg": "[a-zA-Z_][a-zA-Z0-9_]*:[a-zA-Z0-9_]+"
+  },
+  {
+    "id": "DECPRFX",
+    "expreg": "[a-zA-Z_][a-zA-Z0-9_]*:"
+  },
+  {
+    "id": "STRING",
+    "expreg": "\\\".*\\\""
+  },
+  {
+    "id": "LINK",
+    "expreg": "<.*>"
+  },
+  {
+    "id": "VAR",
+    "expreg": "\\?[a-zA-Z_][a-zA-Z0-9_]*"
+  },
+  {
+    "id": "COMP",
+    "expreg": ">=|<=|<|>|=="
+  },
+  {
+    "id": "OPERATOR",
+    "expreg": "\\*|\\+"
+  },
+  {
+    "id": "ENDLINE",
+    "expreg": "\\.$"
+  },
+  {
+    "id": "NEWLINE",
+    "expreg": "\\n"
+  },
+  {
+    "id": "ERRO",
+    "expreg": "."
+  }
+]

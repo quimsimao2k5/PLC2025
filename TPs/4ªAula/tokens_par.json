@@ -1,0 +1,30 @@
+[
+  {
+    "id": "keyword",
+    "expreg": "(?:SELECT|FROM|WHERE|INSERT|INTO|VALUES)"
+  },
+  {
+    "id": "maior",
+    "expreg": ">"
+  },
+  {
+    "id": "inteiro",
+    "expreg": "\\d+"
+  },
+  {
+    "id": "nomesVariaveis",
+    "expreg": "\\w+"
+  },
+  {
+    "id": "SKIP",
+    "expreg": "[ \\t]"
+  },
+  {
+    "id": "NEWLINE",
+    "expreg": "\\n"
+  },
+  {
+    "id": "ERRO",
+    "expreg": "."
+  }
+]

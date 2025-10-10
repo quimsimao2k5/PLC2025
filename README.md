@@ -31,6 +31,11 @@ Estão presentes os TPC's das aulas teóricas tanto como os exercícios realizad
 - 📁 **Diretório:** [TP2/](./TP2/)
 - 📄 **Relatório:** [TP2/README.md](./TP2/README.md)
 
+### Trabalho Casa 3 (TP3)
+
+- 📁 **Diretório:** [TP3/](./TP3/)
+- 📄 **Relatório:** [TP3/README.md](./TP3/README.md)
+
 ---
 
 ## Estrutura do Repositório
@@ -45,11 +50,16 @@ PLC2025/
 ├── TP2/
 │   ├── anexos/
 │   └── README.md
-├
+│
+├── TP3/
+│   ├── anexos/
+│   └── README.md
+│
 └── AulasTP/
     ├── 1ª Aula/
     ├── 2ª Aula/
-    └── 3ª Aula/
+    ├── 3ª Aula/
+    └── 4ª Aula/
 ```
 
 ---
