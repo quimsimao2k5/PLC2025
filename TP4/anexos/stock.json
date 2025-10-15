@@ -1,0 +1,38 @@
+[
+  {
+    "cod": "A23",
+    "nome": "água 0.5L",
+    "quant": 7,
+    "preco": 0.7
+  },
+  {
+    "cod": "B12",
+    "nome": "pão 1 unid.",
+    "quant": 20,
+    "preco": 0.25
+  },
+  {
+    "cod": "C34",
+    "nome": "sumo laranja 1L",
+    "quant": 11,
+    "preco": 1.2
+  },
+  {
+    "cod": "D56",
+    "nome": "chocolate 100g",
+    "quant": 15,
+    "preco": 1.5
+  },
+  {
+    "cod": "E78",
+    "nome": "leite 1L",
+    "quant": 10,
+    "preco": 0.95
+  },
+  {
+    "cod": "F90",
+    "nome": "bolacha 200g",
+    "quant": 18,
+    "preco": 1.0
+  }
+]
