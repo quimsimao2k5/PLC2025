@@ -36,6 +36,11 @@ Estão presentes os TPC's das aulas teóricas tanto como os exercícios realizad
 - 📁 **Diretório:** [TP3/](./TP3/)
 - 📄 **Relatório:** [TP3/README.md](./TP3/README.md)
 
+### Trabalho Casa 4 (TP4)
+
+- 📁 **Diretório:** [TP4/](./TP4/)
+- 📄 **Relatório:** [TP4/README.md](./TP4/README.md)
+
 ---
 
 ## Estrutura do Repositório
