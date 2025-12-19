@@ -1,0 +1,7 @@
+startpushi 1
+pushi 1
+add
+pushs "Result: "
+writes
+writei
+writelnstop

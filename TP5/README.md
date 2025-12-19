@@ -9,7 +9,7 @@ Cria um analisador sintático para as expressões aritméticas.
 Para esta gramática
 
 `Tokens = (NUM)`
-`Literals = (+,-,\*,/,(,))`
+`Literals = (+,-,*,/,(,))`
 
 Exp -> Term Exp'
 Exp' -> PLUS Term Exp'

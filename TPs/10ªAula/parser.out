@@ -1,0 +1,1056 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    PRT
+
+Grammar
+
+Rule 0     S' -> PROG
+Rule 1     PROG -> PROG INS
+Rule 2     PROG -> INS
+Rule 3     PROG -> FIM
+Rule 4     INS -> VAR = EXP
+Rule 5     INS -> ? VAR
+Rule 6     INS -> ! EXP
+Rule 7     INS -> *
+Rule 8     EXP -> EXP - TERM
+Rule 9     EXP -> EXP + TERM
+Rule 10    EXP -> TERM
+Rule 11    TERM -> TERM * FATOR
+Rule 12    TERM -> TERM / FATOR
+Rule 13    TERM -> FATOR
+Rule 14    FATOR -> NUM
+Rule 15    FATOR -> ( EXP )
+Rule 16    FATOR -> VAR
+Rule 17    FATOR -> COND ? EXP : EXP
+Rule 18    COND -> COND | CONJ
+Rule 19    COND -> CONJ
+Rule 20    CONJ -> CONJ & COMP
+Rule 21    CONJ -> COMP
+Rule 22    COMP -> EXP > EXP
+Rule 23    COMP -> EXP < EXP
+
+Terminals, with rules where they appear
+
+!                    : 6
+&                    : 20
+(                    : 15
+)                    : 15
+*                    : 7 11
++                    : 9
+-                    : 8
+/                    : 12
+:                    : 17
+<                    : 23
+=                    : 4
+>                    : 22
+?                    : 5 17
+FIM                  : 3
+NUM                  : 14
+PRT                  : 
+VAR                  : 4 5 16
+error                : 
+|                    : 18
+
+Nonterminals, with rules where they appear
+
+COMP                 : 20 21
+COND                 : 17 18
+CONJ                 : 18 19 20
+EXP                  : 4 6 8 9 15 17 17 22 22 23 23
+FATOR                : 11 12 13
+INS                  : 1 2
+PROG                 : 1 0
+TERM                 : 8 9 10 11 12
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . PROG
+    (1) PROG -> . PROG INS
+    (2) PROG -> . INS
+    (3) PROG -> . FIM
+    (4) INS -> . VAR = EXP
+    (5) INS -> . ? VAR
+    (6) INS -> . ! EXP
+    (7) INS -> . *
+
+    FIM             shift and go to state 3
+    VAR             shift and go to state 4
+    ?               shift and go to state 5
+    !               shift and go to state 6
+    *               shift and go to state 7
+
+    PROG                           shift and go to state 1
+    INS                            shift and go to state 2
+
+state 1
+
+    (0) S' -> PROG .
+    (1) PROG -> PROG . INS
+    (4) INS -> . VAR = EXP
+    (5) INS -> . ? VAR
+    (6) INS -> . ! EXP
+    (7) INS -> . *
+
+    VAR             shift and go to state 4
+    ?               shift and go to state 5
+    !               shift and go to state 6
+    *               shift and go to state 7
+
+    INS                            shift and go to state 8
+
+state 2
+
+    (2) PROG -> INS .
+
+    VAR             reduce using rule 2 (PROG -> INS .)
+    ?               reduce using rule 2 (PROG -> INS .)
+    !               reduce using rule 2 (PROG -> INS .)
+    *               reduce using rule 2 (PROG -> INS .)
+    $end            reduce using rule 2 (PROG -> INS .)
+
+
+state 3
+
+    (3) PROG -> FIM .
+
+    VAR             reduce using rule 3 (PROG -> FIM .)
+    ?               reduce using rule 3 (PROG -> FIM .)
+    !               reduce using rule 3 (PROG -> FIM .)
+    *               reduce using rule 3 (PROG -> FIM .)
+    $end            reduce using rule 3 (PROG -> FIM .)
+
+
+state 4
+
+    (4) INS -> VAR . = EXP
+
+    =               shift and go to state 9
+
+
+state 5
+
+    (5) INS -> ? . VAR
+
+    VAR             shift and go to state 10
+
+
+state 6
+
+    (6) INS -> ! . EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 11
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 7
+
+    (7) INS -> * .
+
+    VAR             reduce using rule 7 (INS -> * .)
+    ?               reduce using rule 7 (INS -> * .)
+    !               reduce using rule 7 (INS -> * .)
+    *               reduce using rule 7 (INS -> * .)
+    $end            reduce using rule 7 (INS -> * .)
+
+
+state 8
+
+    (1) PROG -> PROG INS .
+
+    VAR             reduce using rule 1 (PROG -> PROG INS .)
+    ?               reduce using rule 1 (PROG -> PROG INS .)
+    !               reduce using rule 1 (PROG -> PROG INS .)
+    *               reduce using rule 1 (PROG -> PROG INS .)
+    $end            reduce using rule 1 (PROG -> PROG INS .)
+
+
+state 9
+
+    (4) INS -> VAR = . EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 20
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 10
+
+    (5) INS -> ? VAR .
+
+    VAR             reduce using rule 5 (INS -> ? VAR .)
+    ?               reduce using rule 5 (INS -> ? VAR .)
+    !               reduce using rule 5 (INS -> ? VAR .)
+    *               reduce using rule 5 (INS -> ? VAR .)
+    $end            reduce using rule 5 (INS -> ? VAR .)
+
+
+state 11
+
+    (6) INS -> ! EXP .
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+    VAR             reduce using rule 6 (INS -> ! EXP .)
+    ?               reduce using rule 6 (INS -> ! EXP .)
+    !               reduce using rule 6 (INS -> ! EXP .)
+    *               reduce using rule 6 (INS -> ! EXP .)
+    $end            reduce using rule 6 (INS -> ! EXP .)
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+
+state 12
+
+    (10) EXP -> TERM .
+    (11) TERM -> TERM . * FATOR
+    (12) TERM -> TERM . / FATOR
+
+  ! shift/reduce conflict for * resolved as shift
+  ! shift/reduce conflict for / resolved as shift
+    -               reduce using rule 10 (EXP -> TERM .)
+    +               reduce using rule 10 (EXP -> TERM .)
+    >               reduce using rule 10 (EXP -> TERM .)
+    <               reduce using rule 10 (EXP -> TERM .)
+    VAR             reduce using rule 10 (EXP -> TERM .)
+    ?               reduce using rule 10 (EXP -> TERM .)
+    !               reduce using rule 10 (EXP -> TERM .)
+    $end            reduce using rule 10 (EXP -> TERM .)
+    )               reduce using rule 10 (EXP -> TERM .)
+    &               reduce using rule 10 (EXP -> TERM .)
+    |               reduce using rule 10 (EXP -> TERM .)
+    :               reduce using rule 10 (EXP -> TERM .)
+    *               shift and go to state 25
+    /               shift and go to state 26
+
+  ! *               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! /               [ reduce using rule 10 (EXP -> TERM .) ]
+
+
+state 13
+
+    (13) TERM -> FATOR .
+
+    *               reduce using rule 13 (TERM -> FATOR .)
+    /               reduce using rule 13 (TERM -> FATOR .)
+    -               reduce using rule 13 (TERM -> FATOR .)
+    +               reduce using rule 13 (TERM -> FATOR .)
+    >               reduce using rule 13 (TERM -> FATOR .)
+    <               reduce using rule 13 (TERM -> FATOR .)
+    VAR             reduce using rule 13 (TERM -> FATOR .)
+    ?               reduce using rule 13 (TERM -> FATOR .)
+    !               reduce using rule 13 (TERM -> FATOR .)
+    $end            reduce using rule 13 (TERM -> FATOR .)
+    )               reduce using rule 13 (TERM -> FATOR .)
+    &               reduce using rule 13 (TERM -> FATOR .)
+    |               reduce using rule 13 (TERM -> FATOR .)
+    :               reduce using rule 13 (TERM -> FATOR .)
+
+
+state 14
+
+    (14) FATOR -> NUM .
+
+    *               reduce using rule 14 (FATOR -> NUM .)
+    /               reduce using rule 14 (FATOR -> NUM .)
+    -               reduce using rule 14 (FATOR -> NUM .)
+    +               reduce using rule 14 (FATOR -> NUM .)
+    >               reduce using rule 14 (FATOR -> NUM .)
+    <               reduce using rule 14 (FATOR -> NUM .)
+    VAR             reduce using rule 14 (FATOR -> NUM .)
+    ?               reduce using rule 14 (FATOR -> NUM .)
+    !               reduce using rule 14 (FATOR -> NUM .)
+    $end            reduce using rule 14 (FATOR -> NUM .)
+    )               reduce using rule 14 (FATOR -> NUM .)
+    &               reduce using rule 14 (FATOR -> NUM .)
+    |               reduce using rule 14 (FATOR -> NUM .)
+    :               reduce using rule 14 (FATOR -> NUM .)
+
+
+state 15
+
+    (15) FATOR -> ( . EXP )
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 27
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 16
+
+    (16) FATOR -> VAR .
+
+    *               reduce using rule 16 (FATOR -> VAR .)
+    /               reduce using rule 16 (FATOR -> VAR .)
+    -               reduce using rule 16 (FATOR -> VAR .)
+    +               reduce using rule 16 (FATOR -> VAR .)
+    >               reduce using rule 16 (FATOR -> VAR .)
+    <               reduce using rule 16 (FATOR -> VAR .)
+    VAR             reduce using rule 16 (FATOR -> VAR .)
+    ?               reduce using rule 16 (FATOR -> VAR .)
+    !               reduce using rule 16 (FATOR -> VAR .)
+    $end            reduce using rule 16 (FATOR -> VAR .)
+    )               reduce using rule 16 (FATOR -> VAR .)
+    &               reduce using rule 16 (FATOR -> VAR .)
+    |               reduce using rule 16 (FATOR -> VAR .)
+    :               reduce using rule 16 (FATOR -> VAR .)
+
+
+state 17
+
+    (17) FATOR -> COND . ? EXP : EXP
+    (18) COND -> COND . | CONJ
+
+    ?               shift and go to state 28
+    |               shift and go to state 29
+
+
+state 18
+
+    (19) COND -> CONJ .
+    (20) CONJ -> CONJ . & COMP
+
+    ?               reduce using rule 19 (COND -> CONJ .)
+    |               reduce using rule 19 (COND -> CONJ .)
+    &               shift and go to state 30
+
+
+state 19
+
+    (21) CONJ -> COMP .
+
+    &               reduce using rule 21 (CONJ -> COMP .)
+    ?               reduce using rule 21 (CONJ -> COMP .)
+    |               reduce using rule 21 (CONJ -> COMP .)
+
+
+state 20
+
+    (4) INS -> VAR = EXP .
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+    VAR             reduce using rule 4 (INS -> VAR = EXP .)
+    ?               reduce using rule 4 (INS -> VAR = EXP .)
+    !               reduce using rule 4 (INS -> VAR = EXP .)
+    *               reduce using rule 4 (INS -> VAR = EXP .)
+    $end            reduce using rule 4 (INS -> VAR = EXP .)
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+
+state 21
+
+    (8) EXP -> EXP - . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 31
+    TERM                           shift and go to state 32
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 22
+
+    (9) EXP -> EXP + . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 31
+    TERM                           shift and go to state 33
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 23
+
+    (22) COMP -> EXP > . EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 34
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 24
+
+    (23) COMP -> EXP < . EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    EXP                            shift and go to state 35
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 25
+
+    (11) TERM -> TERM * . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 36
+    EXP                            shift and go to state 31
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 26
+
+    (12) TERM -> TERM / . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 37
+    EXP                            shift and go to state 31
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 27
+
+    (15) FATOR -> ( EXP . )
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+    )               shift and go to state 38
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+
+state 28
+
+    (17) FATOR -> COND ? . EXP : EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    COND                           shift and go to state 17
+    EXP                            shift and go to state 39
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 29
+
+    (18) COND -> COND | . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    COND                           shift and go to state 17
+    CONJ                           shift and go to state 40
+    COMP                           shift and go to state 19
+    EXP                            shift and go to state 31
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+
+state 30
+
+    (20) CONJ -> CONJ & . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 41
+    EXP                            shift and go to state 31
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    COND                           shift and go to state 17
+
+state 31
+
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+
+    >               shift and go to state 23
+    <               shift and go to state 24
+    -               shift and go to state 21
+    +               shift and go to state 22
+
+
+state 32
+
+    (8) EXP -> EXP - TERM .
+    (11) TERM -> TERM . * FATOR
+    (12) TERM -> TERM . / FATOR
+    (10) EXP -> TERM .
+
+  ! shift/reduce conflict for * resolved as shift
+  ! shift/reduce conflict for / resolved as shift
+  ! reduce/reduce conflict for > resolved using rule 8 (EXP -> EXP - TERM .)
+  ! reduce/reduce conflict for < resolved using rule 8 (EXP -> EXP - TERM .)
+  ! reduce/reduce conflict for - resolved using rule 8 (EXP -> EXP - TERM .)
+  ! reduce/reduce conflict for + resolved using rule 8 (EXP -> EXP - TERM .)
+    -               reduce using rule 8 (EXP -> EXP - TERM .)
+    +               reduce using rule 8 (EXP -> EXP - TERM .)
+    >               reduce using rule 8 (EXP -> EXP - TERM .)
+    <               reduce using rule 8 (EXP -> EXP - TERM .)
+    VAR             reduce using rule 8 (EXP -> EXP - TERM .)
+    ?               reduce using rule 8 (EXP -> EXP - TERM .)
+    !               reduce using rule 8 (EXP -> EXP - TERM .)
+    $end            reduce using rule 8 (EXP -> EXP - TERM .)
+    )               reduce using rule 8 (EXP -> EXP - TERM .)
+    &               reduce using rule 8 (EXP -> EXP - TERM .)
+    |               reduce using rule 8 (EXP -> EXP - TERM .)
+    :               reduce using rule 8 (EXP -> EXP - TERM .)
+    *               shift and go to state 25
+    /               shift and go to state 26
+
+  ! *               [ reduce using rule 8 (EXP -> EXP - TERM .) ]
+  ! /               [ reduce using rule 8 (EXP -> EXP - TERM .) ]
+  ! >               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! <               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! -               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! +               [ reduce using rule 10 (EXP -> TERM .) ]
+
+
+state 33
+
+    (9) EXP -> EXP + TERM .
+    (11) TERM -> TERM . * FATOR
+    (12) TERM -> TERM . / FATOR
+    (10) EXP -> TERM .
+
+  ! shift/reduce conflict for * resolved as shift
+  ! shift/reduce conflict for / resolved as shift
+  ! reduce/reduce conflict for > resolved using rule 9 (EXP -> EXP + TERM .)
+  ! reduce/reduce conflict for < resolved using rule 9 (EXP -> EXP + TERM .)
+  ! reduce/reduce conflict for - resolved using rule 9 (EXP -> EXP + TERM .)
+  ! reduce/reduce conflict for + resolved using rule 9 (EXP -> EXP + TERM .)
+    -               reduce using rule 9 (EXP -> EXP + TERM .)
+    +               reduce using rule 9 (EXP -> EXP + TERM .)
+    >               reduce using rule 9 (EXP -> EXP + TERM .)
+    <               reduce using rule 9 (EXP -> EXP + TERM .)
+    VAR             reduce using rule 9 (EXP -> EXP + TERM .)
+    ?               reduce using rule 9 (EXP -> EXP + TERM .)
+    !               reduce using rule 9 (EXP -> EXP + TERM .)
+    $end            reduce using rule 9 (EXP -> EXP + TERM .)
+    )               reduce using rule 9 (EXP -> EXP + TERM .)
+    &               reduce using rule 9 (EXP -> EXP + TERM .)
+    |               reduce using rule 9 (EXP -> EXP + TERM .)
+    :               reduce using rule 9 (EXP -> EXP + TERM .)
+    *               shift and go to state 25
+    /               shift and go to state 26
+
+  ! *               [ reduce using rule 9 (EXP -> EXP + TERM .) ]
+  ! /               [ reduce using rule 9 (EXP -> EXP + TERM .) ]
+  ! >               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! <               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! -               [ reduce using rule 10 (EXP -> TERM .) ]
+  ! +               [ reduce using rule 10 (EXP -> TERM .) ]
+
+
+state 34
+
+    (22) COMP -> EXP > EXP .
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+    &               reduce using rule 22 (COMP -> EXP > EXP .)
+    ?               reduce using rule 22 (COMP -> EXP > EXP .)
+    |               reduce using rule 22 (COMP -> EXP > EXP .)
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+
+state 35
+
+    (23) COMP -> EXP < EXP .
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+    &               reduce using rule 23 (COMP -> EXP < EXP .)
+    ?               reduce using rule 23 (COMP -> EXP < EXP .)
+    |               reduce using rule 23 (COMP -> EXP < EXP .)
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+
+state 36
+
+    (11) TERM -> TERM * FATOR .
+    (13) TERM -> FATOR .
+
+  ! reduce/reduce conflict for * resolved using rule 11 (TERM -> TERM * FATOR .)
+  ! reduce/reduce conflict for / resolved using rule 11 (TERM -> TERM * FATOR .)
+  ! reduce/reduce conflict for > resolved using rule 11 (TERM -> TERM * FATOR .)
+  ! reduce/reduce conflict for < resolved using rule 11 (TERM -> TERM * FATOR .)
+  ! reduce/reduce conflict for - resolved using rule 11 (TERM -> TERM * FATOR .)
+  ! reduce/reduce conflict for + resolved using rule 11 (TERM -> TERM * FATOR .)
+    *               reduce using rule 11 (TERM -> TERM * FATOR .)
+    /               reduce using rule 11 (TERM -> TERM * FATOR .)
+    -               reduce using rule 11 (TERM -> TERM * FATOR .)
+    +               reduce using rule 11 (TERM -> TERM * FATOR .)
+    >               reduce using rule 11 (TERM -> TERM * FATOR .)
+    <               reduce using rule 11 (TERM -> TERM * FATOR .)
+    VAR             reduce using rule 11 (TERM -> TERM * FATOR .)
+    ?               reduce using rule 11 (TERM -> TERM * FATOR .)
+    !               reduce using rule 11 (TERM -> TERM * FATOR .)
+    $end            reduce using rule 11 (TERM -> TERM * FATOR .)
+    )               reduce using rule 11 (TERM -> TERM * FATOR .)
+    &               reduce using rule 11 (TERM -> TERM * FATOR .)
+    |               reduce using rule 11 (TERM -> TERM * FATOR .)
+    :               reduce using rule 11 (TERM -> TERM * FATOR .)
+
+  ! *               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! /               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! >               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! <               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! -               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! +               [ reduce using rule 13 (TERM -> FATOR .) ]
+
+
+state 37
+
+    (12) TERM -> TERM / FATOR .
+    (13) TERM -> FATOR .
+
+  ! reduce/reduce conflict for * resolved using rule 12 (TERM -> TERM / FATOR .)
+  ! reduce/reduce conflict for / resolved using rule 12 (TERM -> TERM / FATOR .)
+  ! reduce/reduce conflict for > resolved using rule 12 (TERM -> TERM / FATOR .)
+  ! reduce/reduce conflict for < resolved using rule 12 (TERM -> TERM / FATOR .)
+  ! reduce/reduce conflict for - resolved using rule 12 (TERM -> TERM / FATOR .)
+  ! reduce/reduce conflict for + resolved using rule 12 (TERM -> TERM / FATOR .)
+    *               reduce using rule 12 (TERM -> TERM / FATOR .)
+    /               reduce using rule 12 (TERM -> TERM / FATOR .)
+    -               reduce using rule 12 (TERM -> TERM / FATOR .)
+    +               reduce using rule 12 (TERM -> TERM / FATOR .)
+    >               reduce using rule 12 (TERM -> TERM / FATOR .)
+    <               reduce using rule 12 (TERM -> TERM / FATOR .)
+    VAR             reduce using rule 12 (TERM -> TERM / FATOR .)
+    ?               reduce using rule 12 (TERM -> TERM / FATOR .)
+    !               reduce using rule 12 (TERM -> TERM / FATOR .)
+    $end            reduce using rule 12 (TERM -> TERM / FATOR .)
+    )               reduce using rule 12 (TERM -> TERM / FATOR .)
+    &               reduce using rule 12 (TERM -> TERM / FATOR .)
+    |               reduce using rule 12 (TERM -> TERM / FATOR .)
+    :               reduce using rule 12 (TERM -> TERM / FATOR .)
+
+  ! *               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! /               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! >               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! <               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! -               [ reduce using rule 13 (TERM -> FATOR .) ]
+  ! +               [ reduce using rule 13 (TERM -> FATOR .) ]
+
+
+state 38
+
+    (15) FATOR -> ( EXP ) .
+
+    *               reduce using rule 15 (FATOR -> ( EXP ) .)
+    /               reduce using rule 15 (FATOR -> ( EXP ) .)
+    -               reduce using rule 15 (FATOR -> ( EXP ) .)
+    +               reduce using rule 15 (FATOR -> ( EXP ) .)
+    >               reduce using rule 15 (FATOR -> ( EXP ) .)
+    <               reduce using rule 15 (FATOR -> ( EXP ) .)
+    VAR             reduce using rule 15 (FATOR -> ( EXP ) .)
+    ?               reduce using rule 15 (FATOR -> ( EXP ) .)
+    !               reduce using rule 15 (FATOR -> ( EXP ) .)
+    $end            reduce using rule 15 (FATOR -> ( EXP ) .)
+    )               reduce using rule 15 (FATOR -> ( EXP ) .)
+    &               reduce using rule 15 (FATOR -> ( EXP ) .)
+    |               reduce using rule 15 (FATOR -> ( EXP ) .)
+    :               reduce using rule 15 (FATOR -> ( EXP ) .)
+
+
+state 39
+
+    (17) FATOR -> COND ? EXP . : EXP
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+    :               shift and go to state 42
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+
+state 40
+
+    (18) COND -> COND | CONJ .
+    (20) CONJ -> CONJ . & COMP
+    (19) COND -> CONJ .
+
+  ! reduce/reduce conflict for ? resolved using rule 18 (COND -> COND | CONJ .)
+  ! reduce/reduce conflict for | resolved using rule 18 (COND -> COND | CONJ .)
+    ?               reduce using rule 18 (COND -> COND | CONJ .)
+    |               reduce using rule 18 (COND -> COND | CONJ .)
+    &               shift and go to state 30
+
+  ! ?               [ reduce using rule 19 (COND -> CONJ .) ]
+  ! |               [ reduce using rule 19 (COND -> CONJ .) ]
+
+
+state 41
+
+    (20) CONJ -> CONJ & COMP .
+    (21) CONJ -> COMP .
+
+  ! reduce/reduce conflict for & resolved using rule 20 (CONJ -> CONJ & COMP .)
+  ! reduce/reduce conflict for ? resolved using rule 20 (CONJ -> CONJ & COMP .)
+  ! reduce/reduce conflict for | resolved using rule 20 (CONJ -> CONJ & COMP .)
+    &               reduce using rule 20 (CONJ -> CONJ & COMP .)
+    ?               reduce using rule 20 (CONJ -> CONJ & COMP .)
+    |               reduce using rule 20 (CONJ -> CONJ & COMP .)
+
+  ! &               [ reduce using rule 21 (CONJ -> COMP .) ]
+  ! ?               [ reduce using rule 21 (CONJ -> COMP .) ]
+  ! |               [ reduce using rule 21 (CONJ -> COMP .) ]
+
+
+state 42
+
+    (17) FATOR -> COND ? EXP : . EXP
+    (8) EXP -> . EXP - TERM
+    (9) EXP -> . EXP + TERM
+    (10) EXP -> . TERM
+    (11) TERM -> . TERM * FATOR
+    (12) TERM -> . TERM / FATOR
+    (13) TERM -> . FATOR
+    (14) FATOR -> . NUM
+    (15) FATOR -> . ( EXP )
+    (16) FATOR -> . VAR
+    (17) FATOR -> . COND ? EXP : EXP
+    (18) COND -> . COND | CONJ
+    (19) COND -> . CONJ
+    (20) CONJ -> . CONJ & COMP
+    (21) CONJ -> . COMP
+    (22) COMP -> . EXP > EXP
+    (23) COMP -> . EXP < EXP
+
+    NUM             shift and go to state 14
+    (               shift and go to state 15
+    VAR             shift and go to state 16
+
+    COND                           shift and go to state 17
+    EXP                            shift and go to state 43
+    TERM                           shift and go to state 12
+    FATOR                          shift and go to state 13
+    CONJ                           shift and go to state 18
+    COMP                           shift and go to state 19
+
+state 43
+
+    (17) FATOR -> COND ? EXP : EXP .
+    (8) EXP -> EXP . - TERM
+    (9) EXP -> EXP . + TERM
+    (22) COMP -> EXP . > EXP
+    (23) COMP -> EXP . < EXP
+
+  ! shift/reduce conflict for - resolved as shift
+  ! shift/reduce conflict for + resolved as shift
+  ! shift/reduce conflict for > resolved as shift
+  ! shift/reduce conflict for < resolved as shift
+    *               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    /               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    VAR             reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    ?               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    !               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    $end            reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    )               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    &               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    |               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    :               reduce using rule 17 (FATOR -> COND ? EXP : EXP .)
+    -               shift and go to state 21
+    +               shift and go to state 22
+    >               shift and go to state 23
+    <               shift and go to state 24
+
+  ! -               [ reduce using rule 17 (FATOR -> COND ? EXP : EXP .) ]
+  ! +               [ reduce using rule 17 (FATOR -> COND ? EXP : EXP .) ]
+  ! >               [ reduce using rule 17 (FATOR -> COND ? EXP : EXP .) ]
+  ! <               [ reduce using rule 17 (FATOR -> COND ? EXP : EXP .) ]
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for * in state 12 resolved as shift
+WARNING: shift/reduce conflict for / in state 12 resolved as shift
+WARNING: shift/reduce conflict for * in state 32 resolved as shift
+WARNING: shift/reduce conflict for / in state 32 resolved as shift
+WARNING: shift/reduce conflict for * in state 33 resolved as shift
+WARNING: shift/reduce conflict for / in state 33 resolved as shift
+WARNING: shift/reduce conflict for - in state 43 resolved as shift
+WARNING: shift/reduce conflict for + in state 43 resolved as shift
+WARNING: shift/reduce conflict for > in state 43 resolved as shift
+WARNING: shift/reduce conflict for < in state 43 resolved as shift
+WARNING: reduce/reduce conflict in state 32 resolved using rule (EXP -> EXP - TERM)
+WARNING: rejected rule (EXP -> TERM) in state 32
+WARNING: reduce/reduce conflict in state 33 resolved using rule (EXP -> EXP + TERM)
+WARNING: rejected rule (EXP -> TERM) in state 33
+WARNING: reduce/reduce conflict in state 36 resolved using rule (TERM -> TERM * FATOR)
+WARNING: rejected rule (TERM -> FATOR) in state 36
+WARNING: reduce/reduce conflict in state 37 resolved using rule (TERM -> TERM / FATOR)
+WARNING: rejected rule (TERM -> FATOR) in state 37
+WARNING: reduce/reduce conflict in state 40 resolved using rule (COND -> COND | CONJ)
+WARNING: rejected rule (COND -> CONJ) in state 40
+WARNING: reduce/reduce conflict in state 41 resolved using rule (CONJ -> CONJ & COMP)
+WARNING: rejected rule (CONJ -> COMP) in state 41
