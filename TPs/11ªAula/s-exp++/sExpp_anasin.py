@@ -160,3 +160,5 @@ texto = '''
 )
 (write f)
 '''
+
+print(parser.parse(texto))

@@ -1,0 +1,26 @@
+start
+pushi 0
+pushi 0
+read
+atoi
+storeg 0
+pushi 1
+storeg 1
+quim0:
+pushg 0
+pushi 1
+sup
+jz quim1
+pushg 1
+pushg 0
+mul
+storeg 1
+pushg 0
+pushi 1
+sub
+storeg 0
+jump quim0
+quim1:
+pushg 1
+writei
+stop
